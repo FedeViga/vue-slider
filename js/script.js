@@ -74,6 +74,11 @@ createApp({
             if(this.slideNumber <= 0) {
                 this.slideNumber = this.movies.length - 1
             }
+        },
+
+        // funzione per cambiare slide cliccando thumbnail
+        activeSlide(index) {
+            this.slideNumber = index
         }
     }
 

@@ -37,34 +37,50 @@
             
         </header>
 
-        <div id="slider" class="mx-auto shadow-lg">
+        <div class="my_container">
 
-            <img 
+            <div id="slider" class="mx-auto shadow-lg mb-2">
+    
+                <img 
+                    v-for="(currentMovie, index) in movies"
+                    :src="currentMovie.image"
+                    :alt="'Locandina ' + (index + 1)"
+                    v-show="index == slideNumber"
+                >
+    
+                <div class="text"
+                    v-for="(currentMovie, index) in movies"
+                    v-show="index == slideNumber"
+                    >
+    
+                    <h2>
+                        <mark>{{movies[index].title}}</mark>
+                    </h2>
+                    <h2>
+                        <mark>{{movies[index].year}}</mark>
+                    </h2>
+    
+                </div>
+    
+                <div id="arrows">
+                    <i @click="prevSlide()" class="fa-solid fa-arrow-left"></i>
+                    <i @click="nextSlide()" class="fa-solid fa-arrow-right"></i>
+                </div>
+                
+            </div>
+    
+            <div id="thumbnails" class="mb-4">
+    
+                <img
                 v-for="(currentMovie, index) in movies"
                 :src="currentMovie.image"
-                :alt="'Locandina ' + (index + 1)"
-                v-show="index == slideNumber"
-            >
-
-            <div class="text"
-                v-for="(currentMovie, index) in movies"
-                v-show="index == slideNumber"
+                :alt="'Anteprima ' + (index + 1)"
+                @click="activeSlide(index)"
+                :class=" index == slideNumber ? 'active' : '' "
                 >
-
-                <h2>
-                    <mark>{{movies[index].title}}</mark>
-                </h2>
-                <h2>
-                    <mark>{{movies[index].year}}</mark>
-                </h2>
-
+    
             </div>
 
-            <div id="arrows">
-                <i @click="prevSlide()" class="fa-solid fa-arrow-left"></i>
-                <i @click="nextSlide()" class="fa-solid fa-arrow-right"></i>
-            </div>
-            
         </div>
 
 
