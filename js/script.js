@@ -71,7 +71,7 @@ createApp({
             this.slideNumber--;
 
             // controllo per ciclo infinito
-            if(this.slideNumber <= 0) {
+            if(this.slideNumber < 0) {
                 this.slideNumber = this.movies.length - 1
             }
         },
@@ -79,7 +79,13 @@ createApp({
         // funzione per cambiare slide cliccando thumbnail
         activeSlide(index) {
             this.slideNumber = index
-        }
+        },
+    },
+
+    mounted() {
+        autoPlaySlider = setInterval(() => {
+            this.nextSlide()
+        }, 3000);
     }
 
 }).mount('#app');
