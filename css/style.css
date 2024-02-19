@@ -2,3 +2,39 @@ body {
     font-family: "Limelight", sans-serif;
     background-color: #FEB81C;
 }
+
+#slider {
+    max-width: 900px;
+    position: relative;
+}
+
+#slider img {
+    width: 100%;
+}
+
+#arrows {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+#arrows * {
+    color: white;
+    font-size: 2em;
+    background-color: rgba(0, 0, 0, 0.397);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding: 5px;
+    transition: .3s ease;
+}
+
+#arrows *:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}

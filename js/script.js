@@ -14,6 +14,10 @@ createApp({
     data() {
         return {
             
+            // contatore delle slide
+            slideNumber : 0,
+
+            // array di oggetti con le informazioni dei film
             movies: [
 
                 {
@@ -47,7 +51,30 @@ createApp({
     },
 
     methods: {
-        
+
+        // funzione per andare alla slide successiva
+        nextSlide() {
+
+            // agiorno contatore
+            this.slideNumber++;
+
+            // controllo per ciclo infinito
+            if(this.slideNumber >= this.movies.length) {
+                this.slideNumber = 0
+            }
+        },
+
+        // funzione per andare alla slide precedente
+        prevSlide() {
+
+            // agiorno contatore
+            this.slideNumber--;
+
+            // controllo per ciclo infinito
+            if(this.slideNumber <= 0) {
+                this.slideNumber = this.movies.length - 1
+            }
+        }
     }
 
 }).mount('#app');
