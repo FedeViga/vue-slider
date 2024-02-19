@@ -11,6 +11,7 @@ body {
 #slider {
     position: relative;
     border: 2px solid black;
+    user-select: none;
 }
 
 #slider img {
@@ -25,7 +26,8 @@ body {
 }
 
 mark {
-    background-color: #FEB81C;
+    background-color: #feb61c83;
+    color: black;
 }
 
 #arrows {
@@ -59,6 +61,7 @@ mark {
     width: 100%;
     border: 2px solid black;
     background-color: black;
+    user-select: none;
 }
 
 #thumbnails img {
@@ -87,7 +90,15 @@ mark {
     }
 
     mark {
-        font-size: 20px;
+        font-size: 16px;
+    }
+
+    #year {
+        display: block;
+    }
+
+    #arrows {
+        padding: 5px;
     }
     
 }

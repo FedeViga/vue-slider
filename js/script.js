@@ -80,6 +80,16 @@ createApp({
         activeSlide(index) {
             this.slideNumber = index
         },
+
+        startAutoPlay() {
+            autoPlaySlider = setInterval(() => {
+                this.nextSlide()
+            }, 3000);
+        },
+
+        stopAutoPlay() {
+            clearInterval(autoPlaySlider)
+        }
     },
 
     mounted() {
