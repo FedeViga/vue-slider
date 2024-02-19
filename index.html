@@ -46,6 +46,20 @@
                 v-show="index == slideNumber"
             >
 
+            <div class="text"
+                v-for="(currentMovie, index) in movies"
+                v-show="index == slideNumber"
+                >
+
+                <h2>
+                    <mark>{{movies[index].title}}</mark>
+                </h2>
+                <h2>
+                    <mark>{{movies[index].year}}</mark>
+                </h2>
+
+            </div>
+
             <div id="arrows">
                 <i @click="prevSlide()" class="fa-solid fa-arrow-left"></i>
                 <i @click="nextSlide()" class="fa-solid fa-arrow-right"></i>
